@@ -1,11 +1,12 @@
-import { Product } from "../types/entities";
+import type { Product } from "../types/entities"; // importo il type Product da entities
 
+// definisco il type Props per le props del componente
 type Props = {
-  product: Product;
-  onAdd: () => void;
+  product: Product; // la prop product è del type Product
+  addCart: () => void; // la prop addCart è una funzione che non riceve argomenti e non restituisce nulla
 };
 
-export default function ProductCard({ product, onAdd }: Props) {
+function ProductCard({ product, addCart }: Props) {
   return (
     <div className="bg-white p-4 rounded-xl shadow flex justify-between items-center">
       <div>
@@ -14,7 +15,7 @@ export default function ProductCard({ product, onAdd }: Props) {
       </div>
 
       <button
-        onClick={onAdd}
+        onClick={addCart}
         className="bg-blue-500 text-white px-3 py-1 rounded-lg hover:bg-blue-600"
       >
         Aggiungi
@@ -22,3 +23,5 @@ export default function ProductCard({ product, onAdd }: Props) {
     </div>
   );
 }
+
+export default ProductCard;

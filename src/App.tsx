@@ -1,11 +1,12 @@
 import { useState } from "react";
 import ProductList from "./components/ProductList";
-import { Product } from "../types/entities";
+import type { Product } from "./types/entities"; // importo il type Product da entities
 
 function App() {
-  const [cartCount, setCartCount] = useState(0);
+  const [cartCount, setCartCount] = useState(0); // stato per aggiornare la pagina
 
   const products: Product[] = [
+    // array di oggetti del type Product
     { id: 1, name: "Laptop", price: 999 },
     { id: 2, name: "Mouse", price: 25 },
     { id: 3, name: "Keyboard", price: 75 },
@@ -19,10 +20,10 @@ function App() {
         <div className="bg-white p-4 rounded-xl shadow mb-6">
           Carrello: <span className="font-bold">{cartCount}</span>
         </div>
-
+        {/* Prodcuct List è il componente padre che passa come props l'array di oggetti e la funzione per aggiornare il carrello */}
         <ProductList
           products={products}
-          onAdd={() => setCartCount(cartCount + 1)}
+          addCart={() => setCartCount(cartCount + 1)}
         />
       </div>
     </div>
