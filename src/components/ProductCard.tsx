@@ -1,4 +1,4 @@
-import { Product } from "./App";
+import { Product } from "../types/entities";
 
 type Props = {
   product: Product;

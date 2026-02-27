@@ -1,5 +1,5 @@
-import { Product } from "./App";
-import ProductCard from "./ProductCard";
+import ProductCard from "components/ProductCard";
+import { Product } from "../../types/entities";
 
 type Props = {
   products: Product[];
